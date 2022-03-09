@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+
 use App\Http\Requests\PostRequest; // useする
 
 class PostController extends Controller
