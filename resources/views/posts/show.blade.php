@@ -11,6 +11,12 @@
     <body>
         <h1 class="title">Blog Name</h1>
         <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
+        <form action="/posts/{{ $post-> id }}" id="form_delete" method="post">
+            {{ csrf_field() }}
+            {{ method_field('delete')}}
+            <input type="submit" style="display:none">
+            <p class="delete">[<span onclick="return deletePost(this);">delete</span>]</p>
+        </form>
         <div class="post">
             <h2 class="title">{{ $post->title }}</h2>
             <p class="body">{{ $post->body }}</p>
